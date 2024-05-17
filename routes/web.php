@@ -14,6 +14,6 @@ Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact']);
 });
 
-Route::get('/blog', function () {
-    return view('blog', ['title' => 'Blog']);
+Route::get('/product', function () {
+    return view('product', ['title' => 'Product']);
 });
