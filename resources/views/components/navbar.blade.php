@@ -11,7 +11,8 @@
                 <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
                 <x-nav-link href="about" :active="request()->is('about')">About</x-nav-link>
                 <x-nav-link href="contact" :active="request()->is('contact')">Contact</x-nav-link>
-                <x-nav-link href="product" :active="request()->is('product')">Product</x-nav-link>
+                <x-nav-link href="products" :active="request()->is('products')">Products</x-nav-link>
+                <x-nav-link href="dashboard" :active="request()->is('dashborad')">Dashboard</x-nav-link>
             
             </div>
             </div>
@@ -67,10 +68,10 @@
         <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
     
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <a href="/" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
-        <a href="about" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
-        <a href="contact" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Contact</a>
-        <a href="blog" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Blog</a>
+            <x-nav-link-mobile href="/" :active="request()->is('/')">Home</x-nav-link-mobile>
+            <x-nav-link-mobile href="about" :active="request()->is('about')">About</x-nav-link-mobile>
+            <x-nav-link-mobile href="contact" :active="request()->is('contact')">Contact</x-nav-link-mobile>
+            <x-nav-link-mobile href="products" :active="request()->is('products')">Products</x-nav-link-mobile>
     
         </div>
         <div class="border-t border-gray-700 pb-3 pt-4">
