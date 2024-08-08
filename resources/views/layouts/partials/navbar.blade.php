@@ -8,11 +8,11 @@
             <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-                <x-nav-link href="about" :active="request()->is('about')">About</x-nav-link>
-                <x-nav-link href="contact" :active="request()->is('contact')">Contact</x-nav-link>
-                <x-nav-link href="products" :active="request()->is('products')">Products</x-nav-link>
-                <x-nav-link href="dashboard" :active="request()->is('dashborad')">Dashboard</x-nav-link>
+                @include('layouts.partials.nav-link', ['href' => '/', 'active' => request()->is('/'), 'slot' => 'Home'])
+                @include('layouts.partials.nav-link', ['href' => 'about', 'active' => request()->is('about'), 'slot' => 'About'])
+                @include('layouts.partials.nav-link', ['href' => 'contact', 'active' => request()->is('contact'), 'slot' => 'Contact'])
+                @include('layouts.partials.nav-link', ['href' => 'products', 'active' => request()->is('products'), 'slot' => 'Products'])
+                @include('layouts.partials.nav-link', ['href' => 'dashboard', 'active' => request()->is('dashboard'), 'slot' => 'Dashboard'])
             
             </div>
             </div>
@@ -68,10 +68,10 @@
         <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
     
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <x-nav-link-mobile href="/" :active="request()->is('/')">Home</x-nav-link-mobile>
-            <x-nav-link-mobile href="about" :active="request()->is('about')">About</x-nav-link-mobile>
-            <x-nav-link-mobile href="contact" :active="request()->is('contact')">Contact</x-nav-link-mobile>
-            <x-nav-link-mobile href="products" :active="request()->is('products')">Products</x-nav-link-mobile>
+        @include('layouts.partials.nav-link-mobile', ['href' => '/', 'active' => request()->is('/'), 'slot' => 'Home'])
+        @include('layouts.partials.nav-link-mobile', ['href' => 'about', 'active' => request()->is('about'), 'slot' => 'About'])
+        @include('layouts.partials.nav-link-mobile', ['href' => 'contact', 'active' => request()->is('contact'), 'slot' => 'Contact'])
+        @include('layouts.partials.nav-link-mobile', ['href' => 'products', 'active' => request()->is('products'), 'slot' => 'Products'])
     
         </div>
         <div class="border-t border-gray-700 pb-3 pt-4">

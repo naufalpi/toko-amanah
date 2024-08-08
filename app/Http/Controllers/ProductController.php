@@ -11,7 +11,10 @@ class ProductController extends Controller
     public function index()
     {
         $title = 'Product';
-        $products = Product::all();
-        return view('products', compact('products'))->with('title', $title);
+ 
+        // Mengambil semua produk beserta relasi yang diperlukan
+        $products = Product::with(['brand', 'sizes', 'inventory'])->get();
+
+        return view('frontend.products', compact('products'))->with('title', $title);
     }
 }

@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
+use App\Models\Brand;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,12 +20,10 @@ class ProductFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
-            'description' => $this->faker->sentence,
-            'category' => $this->faker->randomElement(['sepatu', 'sandal', 'tas']),
-            'brand' => $this->faker->company,
-            'price' => $this->faker->randomFloat(2, 10000, 1000000),
-            'stock' => $this->faker->numberBetween(1, 100),
-            'tag_code' => $this->faker->unique()->regexify('[A-Z]{6}[0-9]{3}')
+            'article_code' => $this->faker->unique()->word,
+            'brand_id' => Brand::factory(), // Mengaitkan dengan BrandFactory
+            'category' => $this->faker->randomElement(['sepatu', 'sandal']),
+            'price' => $this->faker->randomFloat(2, 10, 1000),
         ];
     }
 }

@@ -5,15 +5,21 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home', ['title' => 'Home Page']);
+    return view('frontend.home', ['title' => 'Home Page']);
 });
 
 Route::get('/about', function () {
-    return view('about', ['title' => 'About']);
+    return view('frontend.about', ['title' => 'About']);
 });
 
 Route::get('/contact', function () {
-    return view('contact', ['title' => 'Contact']);
+    return view('frontend.contact', ['title' => 'Contact']);
+});
+
+Route::get('/products', [ProductController::class, 'index']);
+
+Route::get('/dashboard', function () {
+    return view('admin.dashboard.index', ['title' => 'Dashboard']);
 });
 
 // Route::get('/products', function () {
@@ -24,9 +30,3 @@ Route::get('/contact', function () {
 //     $product = Product::find($slug);
 //     return view('product', ['title' => 'Single Product', 'product' => $product]);
 // });
-
-Route::get('/products', [ProductController::class, 'index']);
-
-Route::get('/dashboard', function () {
-    return view('dashboard', ['title' => 'Dashboard']);
-});

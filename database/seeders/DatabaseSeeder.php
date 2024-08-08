@@ -2,10 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use App\Models\Product;
-use App\Models\Size;
-use App\Models\Tag;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -18,18 +15,9 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
-
-        // Create 10 products, each with sizes and tags
-        Product::factory(10)->create()->each(function ($product) {
-            // Create 3 sizes for each product
-            Size::factory(3)->create(['product_id' => $product->id]);
-
-            // Create 1 tag for each product
-            Tag::factory()->create(['product_id' => $product->id]);
-        });
+        \App\Models\Brand::factory(10)->create();
+        \App\Models\Size::factory(10)->create();
+        \App\Models\Product::factory(50)->create();
+        \App\Models\Inventory::factory(100)->create();
     }
 }

@@ -14,12 +14,13 @@
 
         <div class="min-h-full">
             
-            <x-navbar></x-navbar>
-            <x-header>{{ $title }}</x-header>
+            @include('layouts.partials.navbar') 
+            @include('layouts.partials.header', ['slot' => $title])
+    
 
             <main>
                 <div class="mx-auto max-w-full py-6 sm:px-6 lg:px-8">
-                    {{ $slot }}
+                    @yield('content')
                 </div>
             </main>
 
