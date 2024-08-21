@@ -18,10 +18,10 @@
             @include('layouts.partials.header', ['slot' => $title])
     
 
-            <main>
-                <div class="mx-auto max-w-full py-6 sm:px-6 lg:px-8">
-                    @yield('content')
-                </div>
+            <main class="p-4 md:ml-64 h-auto pt-20">
+                
+                @yield('content')
+               
             </main>
 
         </div>

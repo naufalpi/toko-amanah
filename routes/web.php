@@ -22,6 +22,12 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard.index', ['title' => 'Dashboard']);
 });
 
+Route::get('/dashboard/produk', function () {
+    return view('admin.dashboard.produk.index', ['title' => 'Produk']);
+});
+Route::get('/dashboard/penjualan', function () {
+    return view('admin.dashboard.penjualan.index', ['title' => 'Penjualan']);
+});
 // Route::get('/products', function () {
 //     return view('products', ['title' => 'Product', 'products' => Product::all()]);
 // });
