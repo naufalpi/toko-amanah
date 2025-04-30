@@ -18,8 +18,8 @@
             
             <div class="antialiased bg-gray-50 dark:bg-gray-900">
             
-                @include('layouts.partials.dashboard-nav')    
-                @include('layouts.partials.dashboard-side')
+                @include('admin.layouts.navbar')    
+                @include('admin.layouts.sidebar')
             
                 <main class="p-4 md:ml-64 h-auto pt-20">
 

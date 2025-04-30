@@ -9,20 +9,12 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'product_id';
+    protected $fillable = [
+        'brand_id', 'type', 'product_code', 'size', 'color', 'stock', 'price', 'image_path'
+    ];
 
     public function brand()
     {
-        return $this->belongsTo(Brand::class, 'brand_id', 'brand_id');
-    }
-
-    public function sizes()
-    {
-        return $this->belongsToMany(Size::class, 'product_sizes', 'product_id', 'size_id');
-    }
-
-    public function inventory()
-    {
-        return $this->hasMany(Inventory::class, 'product_id', 'product_id');
+        return $this->belongsTo(Brand::class);
     }
 }

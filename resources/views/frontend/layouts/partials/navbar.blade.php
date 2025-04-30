@@ -8,11 +8,11 @@
             <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                @include('layouts.partials.nav-link', ['href' => '/', 'active' => request()->is('/'), 'slot' => 'Home'])
-                @include('layouts.partials.nav-link', ['href' => 'about', 'active' => request()->is('about'), 'slot' => 'About'])
-                @include('layouts.partials.nav-link', ['href' => 'contact', 'active' => request()->is('contact'), 'slot' => 'Contact'])
-                @include('layouts.partials.nav-link', ['href' => 'products', 'active' => request()->is('products'), 'slot' => 'Products'])
-                @include('layouts.partials.nav-link', ['href' => 'dashboard', 'active' => request()->is('dashboard'), 'slot' => 'Dashboard'])
+                @include('frontend.layouts.partials.nav-link', ['href' => '/', 'active' => request()->is('/'), 'slot' => 'Home'])
+                @include('frontend.layouts.partials.nav-link', ['href' => 'about', 'active' => request()->is('about'), 'slot' => 'About'])
+                @include('frontend.layouts.partials.nav-link', ['href' => 'contact', 'active' => request()->is('contact'), 'slot' => 'Contact'])
+                @include('frontend.layouts.partials.nav-link', ['href' => 'products', 'active' => request()->is('products'), 'slot' => 'Products'])
+                @include('frontend.layouts.partials.nav-link', ['href' => 'dashboard', 'active' => request()->is('dashboard'), 'slot' => 'Dashboard'])
             
             </div>
             </div>
@@ -68,10 +68,10 @@
         <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
     
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        @include('layouts.partials.nav-link-mobile', ['href' => '/', 'active' => request()->is('/'), 'slot' => 'Home'])
-        @include('layouts.partials.nav-link-mobile', ['href' => 'about', 'active' => request()->is('about'), 'slot' => 'About'])
-        @include('layouts.partials.nav-link-mobile', ['href' => 'contact', 'active' => request()->is('contact'), 'slot' => 'Contact'])
-        @include('layouts.partials.nav-link-mobile', ['href' => 'products', 'active' => request()->is('products'), 'slot' => 'Products'])
+        @include('frontend.layouts.partials.nav-link-mobile', ['href' => '/', 'active' => request()->is('/'), 'slot' => 'Home'])
+        @include('frontend.layouts.partials.nav-link-mobile', ['href' => 'about', 'active' => request()->is('about'), 'slot' => 'About'])
+        @include('frontend.layouts.partials.nav-link-mobile', ['href' => 'contact', 'active' => request()->is('contact'), 'slot' => 'Contact'])
+        @include('frontend.layouts.partials.nav-link-mobile', ['href' => 'products', 'active' => request()->is('products'), 'slot' => 'Products'])
     
         </div>
         <div class="border-t border-gray-700 pb-3 pt-4">

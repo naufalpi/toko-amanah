@@ -2,7 +2,7 @@
     <div class="overflow-y-auto py-5 px-3 h-full bg-white dark:bg-gray-800">
       <ul class="space-y-2">
         <li>
-          @include('layouts.partials.dashboard-nav-link', [
+          @include('admin.layouts.navlink', [
             'href' => '/dashboard',
             'active' => request()->is('dashboard'),
             'slot' => 'Dashboard',
@@ -10,15 +10,15 @@
           ])
         </li>
         <li>
-          @include('layouts.partials.dashboard-nav-link', [
-            'href' => '/dashboard/produk',
-            'active' => request()->is('dashboard/produk'),
-            'slot' => 'Produk',
+          @include('admin.layouts.navlink', [
+            'href' => '/dashboard/product',
+            'active' => request()->is('dashboard/product'),
+            'slot' => 'Product',
             'icon' => 'fas fa-box'
           ])
         </li>
         <li>
-          @include('layouts.partials.dashboard-nav-link', [
+          @include('admin.layouts.navlink', [
             'href' => '/dashboard/penjualan',
             'active' => request()->is('dashboard/penjualan'),
             'slot' => 'Penjualan',

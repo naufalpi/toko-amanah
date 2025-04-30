@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProductController;
 use App\Models\Product;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProductController;
 
 Route::get('/', function () {
     return view('frontend.home', ['title' => 'Home Page']);
@@ -16,17 +18,19 @@ Route::get('/contact', function () {
     return view('frontend.contact', ['title' => 'Contact']);
 });
 
-Route::get('/products', [ProductController::class, 'index']);
+// Route::get('/products', [ProductController::class, 'index']);
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard.index', ['title' => 'Dashboard']);
+Route::prefix('dashboard')->name('admin.')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::resource('product', ProductController::class)->names('products');
 });
 
-Route::get('/dashboard/produk', function () {
-    return view('admin.dashboard.produk.index', ['title' => 'Produk']);
-});
+
+
+
 Route::get('/dashboard/penjualan', function () {
-    return view('admin.dashboard.penjualan.index', ['title' => 'Penjualan']);
+    return view('dashboard.penjualan.index', ['title' => 'Penjualan']);
 });
 // Route::get('/products', function () {
 //     return view('products', ['title' => 'Product', 'products' => Product::all()]);

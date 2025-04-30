@@ -14,11 +14,11 @@
 
         <div class="min-h-full">
             
-            @include('layouts.partials.navbar') 
-            @include('layouts.partials.header', ['slot' => $title])
+            @include('frontend.layouts.partials.navbar') 
+            @include('frontend.layouts.partials.header', ['slot' => $title])
     
 
-            <main class="p-4 md:ml-64 h-auto pt-20">
+            <main class="p-4 h-auto pt-20">
                 
                 @yield('content')
                
